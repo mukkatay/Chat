@@ -15,6 +15,8 @@
 		BD24901F2AA8651000AFB885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD24901D2AA8651000AFB885 /* LaunchScreen.storyboard */; };
 		BD2851442AA957F20063BCE3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2851432AA957F20063BCE3 /* ProfileViewController.swift */; };
 		BD2851472AA973110063BCE3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD2851462AA973110063BCE3 /* SnapKit */; };
+		BD28514B2AA9F8910063BCE3 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28514A2AA9F8910063BCE3 /* ConversationsListViewController.swift */; };
+		BD28514D2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28514C2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		BD24901E2AA8651000AFB885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD2490202AA8651000AFB885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD2851432AA957F20063BCE3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BD28514A2AA9F8910063BCE3 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
+		BD28514C2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				BD2490122AA8650E00AFB885 /* AppDelegate.swift */,
 				BD2490142AA8650E00AFB885 /* SceneDelegate.swift */,
+				BD28514A2AA9F8910063BCE3 /* ConversationsListViewController.swift */,
+				BD28514C2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift */,
 				BD2490162AA8650E00AFB885 /* ViewController.swift */,
 				BD2851432AA957F20063BCE3 /* ProfileViewController.swift */,
 				BD2490182AA8650E00AFB885 /* Main.storyboard */,
@@ -150,7 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD2490172AA8650E00AFB885 /* ViewController.swift in Sources */,
+				BD28514B2AA9F8910063BCE3 /* ConversationsListViewController.swift in Sources */,
 				BD2490132AA8650E00AFB885 /* AppDelegate.swift in Sources */,
+				BD28514D2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift in Sources */,
 				BD2851442AA957F20063BCE3 /* ProfileViewController.swift in Sources */,
 				BD2490152AA8650E00AFB885 /* SceneDelegate.swift in Sources */,
 			);
