@@ -7,9 +7,25 @@
 
 import UIKit
 
+//enum Section: Hashable, CaseIterable {
+//    case section1
+//    case section2
+//}
+//
+//struct Item: Hashable {
+//    let id = UUID()
+//    let name: String
+//}
+
 final class ConversationsListViewController: UIViewController {
     
+    // UI
     private lazy var tableView = UITableView(frame: .zero)
+//    private var data1: [Item] = []
+//    private var data2: [Item] = []
+    
+    // Model
+//    private lazy var dataSource = DataSource(tableView)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +52,30 @@ final class ConversationsListViewController: UIViewController {
 
 extension ConversationsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return 5
+        } else {
+            return 3
+        }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "conversationsListViewCell", for: indexPath) as? ConversationsListViewCell else {
             return UITableViewCell()
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "ONLINE"
+        } else {
+            return "HISTORY"
+        }
     }
 }
 
