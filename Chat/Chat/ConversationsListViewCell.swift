@@ -12,7 +12,9 @@ final class ConversationsListViewCell: UITableViewCell {
     private lazy var profileImage = UIImageView()
     private lazy var nameLabel = UILabel()
     private lazy var messageLabel = UILabel()
+    private lazy var dateStack = UIStackView()
     private lazy var dateLabel = UILabel()
+    private lazy var rightIcon = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,7 +33,7 @@ final class ConversationsListViewCell: UITableViewCell {
             make.height.equalTo(82)
         }
         
-        [profileImage, nameLabel, messageLabel, dateLabel].forEach{ addSubview($0) }
+        [profileImage, nameLabel, messageLabel, dateStack].forEach{ addSubview($0) }
         profileImage.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(16)
             make.centerY.equalToSuperview()
@@ -45,7 +47,7 @@ final class ConversationsListViewCell: UITableViewCell {
             make.top.equalTo(nameLabel.snp.bottom)
             make.left.equalTo(profileImage.snp.right).offset(8)
         }
-        dateLabel.snp.makeConstraints { make in
+        dateStack.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(16)
             make.right.equalToSuperview().inset(16)
         }
@@ -62,8 +64,13 @@ final class ConversationsListViewCell: UITableViewCell {
         messageLabel.textColor = .systemGray
         messageLabel.numberOfLines = 0
         
+        dateStack.addArrangedSubview(dateLabel)
+        dateStack.addArrangedSubview(rightIcon)
+        dateStack.spacing = 4
         dateLabel.text = "10:11"
         dateLabel.textColor = .systemGray
+        rightIcon.image = UIImage(named: "chevron-right")
+        rightIcon.tintColor = .systemGray
     }
 
 }
