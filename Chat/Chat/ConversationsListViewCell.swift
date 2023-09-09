@@ -9,11 +9,11 @@ import UIKit
 
 final class ConversationsListViewCell: UITableViewCell {
     
-    private lazy var profileImage = UIImageView()
-    private lazy var nameLabel = UILabel()
-    private lazy var messageLabel = UILabel()
+    lazy var profileImage = UIImageView()
+    lazy var nameLabel = UILabel()
+    lazy var messageLabel = UILabel()
+    lazy var dateLabel = UILabel()
     private lazy var dateStack = UIStackView()
-    private lazy var dateLabel = UILabel()
     private lazy var rightIcon = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,7 +30,7 @@ final class ConversationsListViewCell: UITableViewCell {
     
     private func setupUI() {
         contentView.snp.makeConstraints { make in
-            make.height.equalTo(82)
+            make.height.equalTo(72)
         }
         
         [profileImage, nameLabel, messageLabel, dateStack].forEach{ addSubview($0) }
@@ -40,7 +40,7 @@ final class ConversationsListViewCell: UITableViewCell {
             make.width.height.equalTo(50)
         }
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(13)
             make.left.equalTo(profileImage.snp.right).offset(8)
         }
         messageLabel.snp.makeConstraints { make in
@@ -48,7 +48,7 @@ final class ConversationsListViewCell: UITableViewCell {
             make.left.equalTo(profileImage.snp.right).offset(8)
         }
         dateStack.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(13)
             make.right.equalToSuperview().inset(16)
         }
         
@@ -57,10 +57,8 @@ final class ConversationsListViewCell: UITableViewCell {
         profileImage.clipsToBounds = true
         profileImage.layer.cornerRadius = 50 / 2
         
-        nameLabel.text = "Mario"
-        nameLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        nameLabel.font = .systemFont(ofSize: 18, weight: .bold)
         
-        messageLabel.text = "Calls the given closure on each"
         messageLabel.textColor = .systemGray
         messageLabel.numberOfLines = 0
         
@@ -69,6 +67,7 @@ final class ConversationsListViewCell: UITableViewCell {
         dateStack.spacing = 4
         dateLabel.text = "10:11"
         dateLabel.textColor = .systemGray
+        dateLabel.font = .systemFont(ofSize: 16)
         rightIcon.image = UIImage(named: "chevron-right")
         rightIcon.tintColor = .systemGray
     }
