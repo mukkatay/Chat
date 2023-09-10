@@ -13,6 +13,7 @@ final class ConversationsListViewController: UIViewController {
     private lazy var tableView = UITableView(frame: .zero)
     private lazy var conversationData: [ConversationCellModel] = []
     private lazy var settingIcon = UIImageView()
+    private lazy var profileIcon = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,26 @@ final class ConversationsListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ConversationsListViewCell.self, forCellReuseIdentifier: "conversationsListViewCell")
+        
+        view.addSubview(settingIcon)
+        settingIcon.image = UIImage(systemName: "gear")
+        let leftBarButtonItem = UIBarButtonItem(image: settingIcon.image, style: .plain, target: self, action: #selector(leftBarButtonTapped))
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        
+        view.addSubview(profileIcon)
+        profileIcon.image = UIImage(systemName: "person.crop.circle")
+        let rightBarButtonItem = UIBarButtonItem(image: profileIcon.image, style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    @objc func leftBarButtonTapped() {
+        
+    }
+    
+    @objc func rightBarButtonTapped() {
+        let profileViewController = ProfileViewController()
+        let navigationViewController = UINavigationController(rootViewController: profileViewController)
+        present(navigationViewController, animated: true)
     }
 }
 
@@ -117,17 +138,7 @@ extension ConversationsListViewController: UITableViewDataSource {
         }
         cell.dateLabel.text = model.formattedLastMessageDate()
         
-        let gr = UITapGestureRecognizer(target: self, action: #selector(showProfile))
-        cell.profileImage.addGestureRecognizer(gr)
-        cell.profileImage.isUserInteractionEnabled = true
-        
         return cell
-    }
-    
-    @objc func showProfile() {
-        let profileViewController = ProfileViewController()
-        let navigationViewController = UINavigationController(rootViewController: profileViewController)
-        present(navigationViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
