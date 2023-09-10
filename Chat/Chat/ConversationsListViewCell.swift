@@ -7,8 +7,10 @@
 
 import UIKit
 
-final class ConversationsListViewCell: UITableViewCell {
-    
+final class ConversationsListViewCell: UITableViewCell, ConfigurableViewProtocol {
+
+    typealias ConfigurationModel = ConversationCellModel
+
     lazy var profileImage = UIImageView()
     lazy var nameLabel = UILabel()
     lazy var messageLabel = UILabel()
@@ -25,6 +27,18 @@ final class ConversationsListViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+//        profileImage.image = nil
+        nameLabel.text = nil
+        messageLabel.text = nil
+        dateLabel.text = nil
+    }
+    
+    func configure(with model: ConversationCellModel) {
+        
+    }
+    
     
     //MARK: UI setup
     

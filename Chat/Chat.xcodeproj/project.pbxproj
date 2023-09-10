@@ -18,6 +18,7 @@
 		BD28514B2AA9F8910063BCE3 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28514A2AA9F8910063BCE3 /* ConversationsListViewController.swift */; };
 		BD28514D2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28514C2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift */; };
 		BD28514F2AACCA700063BCE3 /* ConversationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28514E2AACCA700063BCE3 /* ConversationCellModel.swift */; };
+		BD2851512AADE91A0063BCE3 /* ConfigurableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2851502AADE91A0063BCE3 /* ConfigurableViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		BD28514A2AA9F8910063BCE3 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		BD28514C2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewCell.swift; sourceTree = "<group>"; };
 		BD28514E2AACCA700063BCE3 /* ConversationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellModel.swift; sourceTree = "<group>"; };
+		BD2851502AADE91A0063BCE3 /* ConfigurableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				BD28514A2AA9F8910063BCE3 /* ConversationsListViewController.swift */,
 				BD28514C2AA9FFAA0063BCE3 /* ConversationsListViewCell.swift */,
 				BD28514E2AACCA700063BCE3 /* ConversationCellModel.swift */,
+				BD2851502AADE91A0063BCE3 /* ConfigurableViewProtocol.swift */,
 				BD2490162AA8650E00AFB885 /* ViewController.swift */,
 				BD2851432AA957F20063BCE3 /* ProfileViewController.swift */,
 				BD2490182AA8650E00AFB885 /* Main.storyboard */,
@@ -165,6 +168,7 @@
 				BD2851442AA957F20063BCE3 /* ProfileViewController.swift in Sources */,
 				BD28514F2AACCA700063BCE3 /* ConversationCellModel.swift in Sources */,
 				BD2490152AA8650E00AFB885 /* SceneDelegate.swift in Sources */,
+				BD2851512AADE91A0063BCE3 /* ConfigurableViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

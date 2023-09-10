@@ -12,6 +12,7 @@ final class ConversationsListViewController: UIViewController {
     // UI
     private lazy var tableView = UITableView(frame: .zero)
     private lazy var conversationData: [ConversationCellModel] = []
+    private lazy var settingIcon = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,28 @@ final class ConversationsListViewController: UIViewController {
             isOnline: false,
             hasUnreadMessages: true
         )
-        conversationData = [model0, model1, model2]
+        let model3 = ConversationCellModel(
+            name: "Mario",
+            lastMessageText: "I'm on my way. Meet me at station",
+            lastMessageDate: Date(),
+            isOnline: true,
+            hasUnreadMessages: false
+        )
+        let model4 = ConversationCellModel(
+            name: "Jane",
+            lastMessageText: "OK",
+            lastMessageDate: Date(),
+            isOnline: true,
+            hasUnreadMessages: true
+        )
+        let model5 = ConversationCellModel(
+            name: "Jason",
+            lastMessageText: nil,
+            lastMessageDate: Date(),
+            isOnline: false,
+            hasUnreadMessages: true
+        )
+        conversationData = [model0, model1, model2, model3, model4, model5]
     }
     
     //MARK: UI setup
@@ -95,7 +117,17 @@ extension ConversationsListViewController: UITableViewDataSource {
         }
         cell.dateLabel.text = model.formattedLastMessageDate()
         
+        let gr = UITapGestureRecognizer(target: self, action: #selector(showProfile))
+        cell.profileImage.addGestureRecognizer(gr)
+        cell.profileImage.isUserInteractionEnabled = true
+        
         return cell
+    }
+    
+    @objc func showProfile() {
+        let profileViewController = ProfileViewController()
+        let navigationViewController = UINavigationController(rootViewController: profileViewController)
+        present(navigationViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
