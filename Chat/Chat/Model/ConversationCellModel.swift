@@ -13,19 +13,22 @@ class ConversationCellModel {
     let lastMessageDate: Date
     let isOnline: Bool
     let hasUnreadMessages: Bool
+    let profileImage: String?
     
     init(
         name: String,
         lastMessageText: String?,
         lastMessageDate: Date,
         isOnline: Bool,
-        hasUnreadMessages: Bool
+        hasUnreadMessages: Bool,
+        profileImage: String?
     ) {
         self.name = name
         self.lastMessageText = lastMessageText
         self.lastMessageDate = lastMessageDate
         self.isOnline = isOnline
         self.hasUnreadMessages = hasUnreadMessages
+        self.profileImage = profileImage
     }
     
     func formattedLastMessageDate() -> String {

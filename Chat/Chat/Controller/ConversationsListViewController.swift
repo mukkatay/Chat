@@ -32,42 +32,48 @@ final class ConversationsListViewController: UIViewController {
             lastMessageText: "I'm on my way. Meet me at station",
             lastMessageDate: Date(),
             isOnline: true,
-            hasUnreadMessages: false
+            hasUnreadMessages: false,
+            profileImage: "Lee"
         )
         let model1 = ConversationCellModel(
             name: "Jane",
             lastMessageText: "OK",
             lastMessageDate: Date(),
             isOnline: true,
-            hasUnreadMessages: true
+            hasUnreadMessages: true,
+            profileImage: "Lee"
         )
         let model2 = ConversationCellModel(
             name: "Jason",
             lastMessageText: nil,
             lastMessageDate: Date(),
             isOnline: false,
-            hasUnreadMessages: true
+            hasUnreadMessages: true,
+            profileImage: "Lee"
         )
         let model3 = ConversationCellModel(
             name: "Mario",
             lastMessageText: "I'm on my way. Meet me at station",
             lastMessageDate: Date(),
             isOnline: true,
-            hasUnreadMessages: false
+            hasUnreadMessages: false,
+            profileImage: "Lee"
         )
         let model4 = ConversationCellModel(
             name: "Jane",
             lastMessageText: "OK",
             lastMessageDate: Date(),
             isOnline: true,
-            hasUnreadMessages: true
+            hasUnreadMessages: true,
+            profileImage: "Lee"
         )
         let model5 = ConversationCellModel(
             name: "Jason",
             lastMessageText: nil,
             lastMessageDate: Date(),
             isOnline: false,
-            hasUnreadMessages: true
+            hasUnreadMessages: true,
+            profileImage: "Lee"
         )
         conversationData = [model0, model1, model2, model3, model4, model5]
     }
@@ -137,6 +143,7 @@ extension ConversationsListViewController: UITableViewDataSource {
             cell.messageLabel.text = "No messages yet"
         }
         cell.dateLabel.text = model.formattedLastMessageDate()
+        cell.profileImage.image = UIImage(named: model.profileImage ?? "Lee")
         
         return cell
     }
