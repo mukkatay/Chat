@@ -69,9 +69,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
             action: #selector(editButtonTapped)
         )
         
-        roundView.backgroundColor = .systemPink
+        roundView.backgroundColor = .purple
         roundView.layer.cornerRadius = 160 / 2
+        roundView.addSubview(profileImageView)
         
+        profileImageView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(160)
+        }
+        profileImageView.image = UIImage(named: "Lee")
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.clipsToBounds = true
         profileImageView.layer.cornerRadius = 160 / 2

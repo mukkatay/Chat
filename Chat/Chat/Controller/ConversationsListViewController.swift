@@ -19,6 +19,7 @@ final class ConversationsListViewController: UIViewController {
         super.viewDidLoad()
         title = "Chat"
         navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.backButtonTitle = ""
         
         fillArray()
         setupTableView()
